@@ -1,0 +1,16 @@
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+BODY {
+  overflow: hidden;
+}
+
+#info {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "particles",
+  "version": "1.0.0",
+  "description": "particle editor & reader for js-games",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julien-laville/particle.git"
+  },
+  "keywords": [
+    "particles",
+    "js13k",
+    "game"
+  ],
+  "author": "julien",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.19.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.0"
+  }
+}
