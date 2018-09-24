@@ -1,4 +1,5 @@
-const emitters = []
+import BlanckSlate from "./blanck_slate";
+
 const c = document.getElementById('c')
 
 window.SCREEN_WIDTH = window.innerWidth
@@ -19,13 +20,23 @@ const party = new Party()
 window.dt = 0;
 let lastU = Date.now()
 
+
+
+/* world */
+
+let bs = new BlanckSlate()
+party.add(bs.emitter)
+
 function paint() {
   dt = Date.now() - lastU
   lastU = Date.now()
 
   c.width += 0
-  background.draw()
-  party.draw()
+
+  party.k()
+
+  background.d()
+  party.d()
   requestAnimationFrame(paint)
 }
 paint()

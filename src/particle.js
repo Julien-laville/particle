@@ -1,7 +1,9 @@
 import V2d from "./libs/v2d";
 
 export default class Particle {
-  constructor(pos, speed, lifeSpan) {
+  constructor(pos, speed, shape, lifeSpan) {
+    this.shape = shape
+
     this.initialPos = pos.clone()
     this.pos = pos.clone()
     this.speed = speed
@@ -11,18 +13,10 @@ export default class Particle {
     this.alive = false
   }
 
-  draw() {
-    this.k()
+  d() {
     if(true === this.alive) {
-      ctx.beginPath()
-      ctx.arc(this.pos.x, this.pos.y, 5, 0, Math.PI * 2)
-      ctx.fillStyle = '#fff'
-      ctx.fill()
+      this.shape.d(this.pos)
     }
-
-
-
-
   }
 
   k() {
@@ -34,7 +28,6 @@ export default class Particle {
       this.lifeSpan = this.saveLifeSpan
       this.pos.setV(this.initialPos)
     }
-    info.innerHTML = this.lifeSpan
     if(false === this.alive) {
       if(this.delay < 0) {
         this.alive = true

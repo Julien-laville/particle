@@ -1,19 +1,22 @@
-import Particle from "./particle";
-import V2d from "./libs/v2d";
-
 export default class Emitter {
-  constructor(pos, n) {
+  constructor(pos) {
     this.pos = pos
     this.particles = []
-    for(var i = 0; i < n; i ++) {
-      let a = Math.random() * 2 * Math.PI
-      let speed = new V2d(Math.cos(a), Math.sin(a))
-      this.particles.push(new Particle(this.pos, speed, 1441))
+  }
+
+  add(p) {
+    this.particles.push(p)
+  }
+
+  d() {
+    for(let i = 0; i < this.particles.length; i ++) {
+      this.particles[i].d()
     }
   }
-  draw() {
+
+  k() {
     for(let i = 0; i < this.particles.length; i ++) {
-      this.particles[i].draw()
+      this.particles[i].k()
     }
   }
 }
